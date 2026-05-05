@@ -5,6 +5,7 @@
   "loginSuccess": "Login Successful",
   "loginSuccessDesc": "Welcome Back",
   "loginSubtitle": "Enter your account details to manage your projects",
+  "loginPageLead": "Welcome back. Log in to continue managing your platform.",
   "selectAccount": "Quick Select Account",
   "username": "Username",
   "password": "Password",

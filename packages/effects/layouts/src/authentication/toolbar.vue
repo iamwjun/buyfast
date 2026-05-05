@@ -13,6 +13,7 @@ import {
 } from '../widgets';
 
 interface Props {
+  placement?: 'bottom-right' | 'top-right';
   toolbarList?: ToolbarType[];
 }
 
@@ -21,6 +22,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<Props>(), {
+  placement: 'top-right',
   toolbarList: () => ['color', 'language', 'layout', 'theme'],
 });
 
@@ -33,9 +35,11 @@ const showTheme = computed(() => props.toolbarList.includes('theme'));
 <template>
   <div
     :class="{
+      'bottom-4 right-4 md:bottom-8 md:right-8': placement === 'bottom-right',
       'rounded-3xl bg-accent px-3 py-1': toolbarList.length > 1,
+      'top-4 right-2': placement === 'top-right',
     }"
-    class="absolute top-4 right-2 z-10 flex-center"
+    class="absolute z-10 flex-center"
   >
     <!-- Only show on medium and larger screens -->
     <div class="hidden md:flex">
